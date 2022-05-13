@@ -1,0 +1,19 @@
+    <div>
+    <div class="card-img-wrapper slikta">
+        <img src="{{apartment.photos[0]?.url}}" onerror="this.src='assets/NoImage.png'" class="slikta">
+    </div>
+    <div class="card-body p-2">
+        <p class=" card-title text-center mb-1 obrub">OPIS STANA:
+            {{apartment.apartmentDescription}}        
+        <p class=" card-title text-center mb-1 obrub">CIJENA: {{apartment.monthlyPrice}} KM 
+        </p>
+           <p class=" card-title text-center mb-1 obrub">BROJ SOBA:
+            {{apartment.numberOfRooms}} 
+           </p><br>
+           <div class="button">
+           <button mat-raised-button color="primary" (click)="openDialog()">IZNAJMI</button> 
+           </div>
+        
+    </div>
+    </div>
+

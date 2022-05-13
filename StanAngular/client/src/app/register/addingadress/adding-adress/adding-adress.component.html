@@ -1,0 +1,33 @@
+<form #form="ngForm"  (submit)="onSubmit(form)" autocomplete="off">
+    <h2 class="text-center text-primary">Unesite podatke o stanu</h2>
+
+    <div class="form-group">
+        <label>Grad</label>
+        <input class="form-control form-control-lg" placeholder="Ime grada"
+        name="city" #city="ngModel" [(ngModel)]="memberService.formData.city" required>
+    </div>
+
+    <div class="form-group">
+        <label>Ime ulice</label>
+        <input class="form-control form-control-lg"  name="streetName" #streetName="ngModel" placeholder="Ime ulice"
+        [(ngModel)]="memberService.formData.streetName" required >
+    </div>
+
+    <div class="form-group">
+        <label>Broj zgrade</label>
+        <input class="form-control form-control-lg" placeholder="Broj zgrade"
+        name="buildingNumber" #buildingNumber="ngModel" [(ngModel)]="memberService.formData.buildingNumber" required>
+    </div>
+
+    <div class="form-group">
+        <label>Broj stana</label>
+        <input class="form-control form-control-lg" placeholder="Broj stana"
+        name="apartmentNumber" #apartmentNumber="ngModel" [(ngModel)]="memberService.formData.apartmentNumber" required>
+    </div>
+
+    <div class="form-group text-center">
+        <button class="btn btn-success mr-2" type="submit" [disabled]="form.invalid">Unesi</button>
+        <button class="btn btn-danger  mr-2" (click) ="cancel()" type="button">Odustani</button>
+    </div>
+    
+</form>
